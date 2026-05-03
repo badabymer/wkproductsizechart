@@ -272,10 +272,11 @@ $(document).ready(function() {
             }
         }
 
-        var selectedType = $("input[name=size_chart_type]:checked").val();
-        if (typeof image_type !== 'undefined' && selectedType == image_type) {
+        var selectedType = parseInt($("input[name=size_chart_type]:checked").val());
+        var imgType = (typeof image_type !== 'undefined') ? parseInt(image_type) : 2;
+        if (selectedType === imgType) {
             // Image type — no attribute validation needed
-        } else if (selectedType == predefined_type) {
+        } else if (selectedType === parseInt(predefined_type)) {
             if (!$("#id_attribute_group").val()) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -445,13 +446,14 @@ function setNewWidth(newWidth)
 function toggleHideAttributes()
 {
     $("#show_attribute").addClass("hidden");
-    var currentType = $("input[name=size_chart_type]:checked").val();
-    if (typeof image_type !== 'undefined' && currentType == image_type) {
+    var currentType = parseInt($("input[name=size_chart_type]:checked").val());
+    var imgType = (typeof image_type !== 'undefined') ? parseInt(image_type) : 2;
+    if (currentType === imgType) {
         $("#custom_attribute").parents(".form-group:first").addClass("hidden");
         $("#attribute_checkbox").addClass("hidden");
         $("#id_attribute_group").parents(".form-group:first").addClass("hidden");
         $(".back_btn_row").addClass("hidden");
-    } else if (currentType == predefined_type) {
+    } else if (currentType === parseInt(predefined_type)) {
         $("#custom_attribute").parents(".form-group:first").addClass("hidden");
         $("#attribute_checkbox").removeClass("hidden");
         $("#id_attribute_group").parents(".form-group:first").removeClass("hidden");
@@ -466,14 +468,15 @@ function toggleHideAttributes()
 
 function toggleHideOnEdit()
 {
-    var currentType = $("input[name=size_chart_type]:checked").val();
-    if (typeof image_type !== 'undefined' && currentType == image_type) {
+    var currentType = parseInt($("input[name=size_chart_type]:checked").val());
+    var imgType = (typeof image_type !== 'undefined') ? parseInt(image_type) : 2;
+    if (currentType === imgType) {
         $("#custom_attribute").parents(".form-group:first").addClass("hidden");
         $("#attribute_checkbox").addClass("hidden");
         $("#id_attribute_group").parents(".form-group:first").addClass("hidden");
         $("#show_attribute").addClass("hidden");
         $(".back_btn_row").addClass("hidden");
-    } else if (currentType == predefined_type) {
+    } else if (currentType === parseInt(predefined_type)) {
         $("#custom_attribute").parents(".form-group:first").addClass("hidden");
         $("#attribute_checkbox").removeClass("hidden");
         $("#id_attribute_group").parents(".form-group:first").removeClass("hidden");

@@ -85,6 +85,12 @@ class WkSizeChart extends ObjectModel
     public function actionBeforeSizeChartDelete($idSizeChart)
     {
         if ($idSizeChart) {
+            if ($this->image) {
+                $imagePath = _PS_MODULE_DIR_.'wkproductsizechart/views/img/'.$this->image;
+                if (file_exists($imagePath)) {
+                    @unlink($imagePath);
+                }
+            }
             $objSizeChartAttribute = new WkSizeChartAttribute();
             $sizeChartAttrs = $objSizeChartAttribute->getSizeChartAttribute($idSizeChart);
             if ($sizeChartAttrs) {
