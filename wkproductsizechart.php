@@ -74,6 +74,7 @@ class WkProductSizeChart extends Module
             'displayProductAdditionalInfo',
             'actionObjectProductAddBefore',
             'actionObjectProductUpdateBefore',
+            'actionObjectProductDeleteBefore',
             'actionProductSave',
             'actionObjectLanguageAddAfter',
             'actionAdminControllerSetMedia',
@@ -108,6 +109,16 @@ class WkProductSizeChart extends Module
             'createSizeChartLink' => $this->context->link->getAdminLink('AdminWkSizeChart')
         ));
         return $this->display(__FILE__, 'apply-size-chart.tpl');
+    }
+
+    public function hookActionObjectProductDeleteBefore($params)
+    {
+        if (isset($params['object']->id) && $params['object']->id) {
+            Db::getInstance()->delete(
+                'wk_size_chart_product',
+                'id_product = '.(int)$params['object']->id
+            );
+        }
     }
 
     public function hookActionObjectProductAddBefore()

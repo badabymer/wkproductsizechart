@@ -119,6 +119,7 @@ class WkProductSizeChartDb
      */
     public function deleteTables()
     {
+        Db::getInstance()->execute('SET FOREIGN_KEY_CHECKS=0');
         $sql = array(
             "DROP TABLE IF EXISTS `"._DB_PREFIX_."wk_size_chart_product`",
             "DROP TABLE IF EXISTS `"._DB_PREFIX_."wk_size_chart_filter`",
@@ -129,17 +130,14 @@ class WkProductSizeChartDb
             "DROP TABLE IF EXISTS `"._DB_PREFIX_."wk_size_chart_lang`",
             "DROP TABLE IF EXISTS `"._DB_PREFIX_."wk_size_chart`",
         );
-
-        if (isset($sql)) {
-            foreach ($sql as $query) {
-                if ($query) {
-                    if (!Db::getInstance()->execute(trim($query))) {
-                        return false;
-                    }
-                }
+        $result = true;
+        foreach ($sql as $query) {
+            if (!Db::getInstance()->execute(trim($query))) {
+                $result = false;
             }
         }
-        return true;
+        Db::getInstance()->execute('SET FOREIGN_KEY_CHECKS=1');
+        return $result;
     }
 
     public function updateMeasurementLangData($newIdLang)
