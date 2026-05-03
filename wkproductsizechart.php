@@ -352,8 +352,8 @@ class WkProductSizeChart extends Module
                     'chartRequired' => $this->l('Select a size chart.'),
                 )
             ));
-            $this->context->controller->addJS($this->_path . 'views/js/wk-size-chart-table.js');
-            $this->context->controller->addCss($this->_path . 'views/css/wk-size-chart-form.css');
+            $this->context->controller->addJS($this->_path . 'views/js/wk-size-chart-table.js?v='.$this->version);
+            $this->context->controller->addCss($this->_path . 'views/css/wk-size-chart-form.css?v='.$this->version);
         }
     }
 
@@ -366,8 +366,8 @@ class WkProductSizeChart extends Module
             Media::addJsDef(array(
                 'popUpView' => Configuration::get('WK_DISPLAY_SIZE_CHART_ON_POPUP'),
             ));
-            $this->context->controller->addJS($this->_path . 'views/js/wk-size-chart-table.js');
-            $this->context->controller->addCss($this->_path . '/views/css/wk-size-chart-form.css');
+            $this->context->controller->addJS($this->_path . 'views/js/wk-size-chart-table.js?v='.$this->version);
+            $this->context->controller->addCss($this->_path . '/views/css/wk-size-chart-form.css?v='.$this->version);
         }
     }
 

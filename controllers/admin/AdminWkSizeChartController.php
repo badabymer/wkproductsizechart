@@ -318,7 +318,7 @@ class AdminWkSizeChartController extends ModuleAdminController
                     'type' => 'textbutton',
                     'label' => $this->l('Custom Attribute'),
                     'name' => 'custom_attribute',
-                    'required' => true,
+                    'required' => false,
                     'desc' => $this->l('Add custom attributes separated by comma ') .'(,)',
                     'button' => array(
                         'label' => $this->l('Continue'),
@@ -803,8 +803,12 @@ class AdminWkSizeChartController extends ModuleAdminController
                 'attributeInvalid' => $this->l('Attribute is invalid.'),
             )
         ));
-        $this->context->controller->addJs(_PS_MODULE_DIR_.$this->module->name.'/views/js/wk-size-chart-form.js');
-        $this->context->controller->addCss(_PS_MODULE_DIR_.$this->module->name.'/views/css/wk-size-chart-form.css');
+        $this->context->controller->addJs(
+            _PS_MODULE_DIR_.$this->module->name.'/views/js/wk-size-chart-form.js?v='.$this->module->version
+        );
+        $this->context->controller->addCss(
+            _PS_MODULE_DIR_.$this->module->name.'/views/css/wk-size-chart-form.css?v='.$this->module->version
+        );
     }
 
     /**
