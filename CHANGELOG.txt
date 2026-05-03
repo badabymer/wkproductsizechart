@@ -1,0 +1,15 @@
+--------------------
+# Change Log V4.1.0:
+--------------------
+## Features:
+- [-]BO : New size chart type "Image" — upload a ready-made image (jpg, jpeg, png, webp).
+- [-]FO : When image type is selected, display only the image at full width.
+
+--------------------
+# Change Log V4.0.0:
+--------------------
+## Features:
+- [-]FO : Display size chart on product page.
+- [-]BO : Create size chart for products.
+- [-]BO : Applying size chart for particular product.
+- [-]BO : Applying size chart on multiple products using bulk action.

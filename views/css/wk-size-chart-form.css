@@ -1,0 +1,126 @@
+/**
+* 2010-2019 Webkul.
+*
+* NOTICE OF LICENSE
+*
+* All rights is reserved,
+* Please go through this link for complete license : https://store.webkul.com/license.html
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade this module to newer
+* versions in the future. If you wish to customize this module for your
+* needs please refer to https://store.webkul.com/customisation-guidelines/ for more information.
+*
+*  @author    Webkul IN <support@webkul.com>
+*  @copyright 2010-2019 Webkul IN
+*  @license   https://store.webkul.com/license.html
+*/
+
+#back {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+#size-chart-button {
+    margin-top: 2rem !important;
+}
+#size-chart-view {
+    margin-top: 1rem;
+    padding : 15px;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+    background-color: white;
+}
+.wk-set-option {
+    font-weight: 600;
+    text-align: center;
+    padding-top: 6px;
+}
+.wk-border-radius {
+    border-radius : 0px !important;
+}
+.wk-row-padding {
+    padding: 10px;
+}
+.wk_set_row_margin {
+    margin: 5px;
+    margin-left: 5px !important;
+}
+.wk-size-chart-container {
+    max-width: 690px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.wk-col-margin {
+    margin: 0 3px;
+}
+.wk-float-left {
+    float: left;
+}
+.wk-border {
+    border : 1px solid rgb(212, 203, 203);
+    border-radius : 3px !important;
+}
+.wk-font-size {
+    font-size: 12px;
+}
+.wk-table-row-border {
+    border-top: 1px solid rgb(212, 203, 203) !important;
+}
+.wk-height {
+    height: 160px;
+    margin-bottom: 1rem;
+}
+.wk-img-height {
+    height: 100%;
+    max-width:100%;
+    width: auto;
+}
+.wk-min-height {
+    min-height: 0px !important;
+}
+.wk-scroll-vertical {
+    overflow-x: auto;
+}
+.wk-scroll-horizontal {
+    overflow-y: auto;
+}
+.wk-table-margin {
+    margin-bottom: 0rem !important;
+}
+.wk-table-text-align {
+    text-align: center !important;
+}
+
+@media (max-width:575.98)
+{
+    .wk-size-chart-container {
+        width: 100px;
+    }
+    .wk-row-width {
+        width: 400px;
+    }
+}
+@media (min-width:576px) and (max-width:767.98px)
+{
+    .wk-size-chart-container {
+        width: 100px;
+    }
+    .wk-row-width {
+        width: 600px;
+    }
+}
+@media (min-width:768px) and (max-width:991.98px)
+{
+    .wk-size-chart-container .wk-row-width {
+        width: 800px;
+    }
+}
+@media (min-width:992px)
+{
+    #wk_img_div {
+        padding-right: 0px !important;
+    }
+    .wk-size-chart-container .wk-row-width {
+        width: 1000px;
+    }
+}

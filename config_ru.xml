@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>wkproductsizechart</name>
+    <displayName><![CDATA[PrestaShop продукта Таблица размеров]]></displayName>
+    <version><![CDATA[4.0.0]]></version>
+    <description><![CDATA[При этом модуль администратора может создавать и применять диаграмму размера на продукты.]]></description>
+    <author><![CDATA[Webkul]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Уверены ли вы?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
