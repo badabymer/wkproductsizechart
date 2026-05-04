@@ -56,7 +56,7 @@ class WkProductSizeChartDb
             "CREATE TABLE IF NOT EXISTS `"._DB_PREFIX_."wk_size_chart_lang` (
                 `id_size_chart` int(10) unsigned NOT NULL,
                 `id_lang` int(11) unsigned NOT NULL,
-                `title` varchar(32) NOT NULL,
+                `title` varchar(85) NOT NULL,
                 `description` text,
                 PRIMARY KEY (`id_size_chart`, `id_lang`)
             ) ENGINE = "._MYSQL_ENGINE_." DEFAULT CHARSET = utf8",
@@ -140,12 +140,20 @@ class WkProductSizeChartDb
         return $result;
     }
 
-    public function upgradeTables()
+    public function upgradeTables($version = null)
     {
-        Db::getInstance()->execute(
-            'ALTER TABLE `'._DB_PREFIX_.'wk_size_chart`
-            MODIFY COLUMN `image` varchar(255)'
-        );
+        if (is_null($version) || version_compare($version, '4.2.0', '<=')) {
+            Db::getInstance()->execute(
+                'ALTER TABLE `'._DB_PREFIX_.'wk_size_chart`
+                MODIFY COLUMN `image` varchar(255)'
+            );
+        }
+        if (is_null($version) || version_compare($version, '4.3.0', '<=')) {
+            Db::getInstance()->execute(
+                'ALTER TABLE `'._DB_PREFIX_.'wk_size_chart_lang`
+                MODIFY COLUMN `title` varchar(85) NOT NULL'
+            );
+        }
     }
 
     public function updateMeasurementLangData($newIdLang)

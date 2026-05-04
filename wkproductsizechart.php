@@ -30,7 +30,7 @@ class WkProductSizeChart extends Module
     {
         $this->name = 'wkproductsizechart';      /* Name of the Module */
         $this->tab = 'front_office_features';   /* Tab to Display [Categories in Backoffice Module Page] */
-        $this->version = '4.2.0';               /* Module version display in module list */
+        $this->version = '4.3.0';               /* Module version display in module list */
         $this->author = 'Webkul';
         $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
         parent::__construct();

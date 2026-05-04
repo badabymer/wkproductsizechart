@@ -47,7 +47,7 @@ class WkSizeChart extends ObjectModel
             'title' => array(
                 'type' => self::TYPE_STRING,
                 'validate' => 'isGenericName',
-                'size' => 32,
+                'size' => 85,
                 'lang' => true,
                 'required' => true
             ),
