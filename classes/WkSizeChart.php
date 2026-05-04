@@ -38,7 +38,7 @@ class WkSizeChart extends ObjectModel
         'primary' => 'id_size_chart',
         'multilang' => true,
         'fields' => array(
-            'image' => array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'size' => 50),
+            'image' => array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'size' => 255),
             'size_chart_type' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedInt', 'required' => true),
             'id_attribute_group' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
             'active' => array('type' => self::TYPE_BOOL, 'validate' => 'isBool', 'required' => true),

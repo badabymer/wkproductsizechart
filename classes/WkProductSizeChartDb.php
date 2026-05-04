@@ -45,7 +45,7 @@ class WkProductSizeChartDb
         return array(
             "CREATE TABLE IF NOT EXISTS `"._DB_PREFIX_."wk_size_chart` (
                 `id_size_chart` int(10) unsigned NOT NULL auto_increment,
-                `image` varchar(50),
+                `image` varchar(255),
                 `size_chart_type` tinyint(3) unsigned NOT NULL DEFAULT '0',
                 `id_attribute_group` int(10) unsigned NOT NULL DEFAULT '0',
                 `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
@@ -138,6 +138,14 @@ class WkProductSizeChartDb
         }
         Db::getInstance()->execute('SET FOREIGN_KEY_CHECKS=1');
         return $result;
+    }
+
+    public function upgradeTables()
+    {
+        Db::getInstance()->execute(
+            'ALTER TABLE `'._DB_PREFIX_.'wk_size_chart`
+            MODIFY COLUMN `image` varchar(255)'
+        );
     }
 
     public function updateMeasurementLangData($newIdLang)

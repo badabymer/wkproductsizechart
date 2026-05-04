@@ -45,7 +45,6 @@ class AdminWkSizeChartController extends ModuleAdminController
             'title' => array(
                 'title' => $this->l('Title'),
                 'align' => 'center',
-                'class' => 'fixed-width-xxl',
             ),
             'size_chart_type' => array(
                 'title' => $this->l('Type'),
